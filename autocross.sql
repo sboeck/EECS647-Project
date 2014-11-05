@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2014 at 11:22 PM
+-- Generation Time: Nov 05, 2014 at 11:49 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -339,7 +339,6 @@ INSERT INTO `event` (`Event_ID`, `Location`, `Date`) VALUES
 CREATE TABLE IF NOT EXISTS `host` (
   `Region_name` text NOT NULL,
   `Event_ID` int(8) NOT NULL,
-  `Year` year(4) NOT NULL,
   PRIMARY KEY (`Event_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -347,22 +346,22 @@ CREATE TABLE IF NOT EXISTS `host` (
 -- Dumping data for table `host`
 --
 
-INSERT INTO `host` (`Region_name`, `Event_ID`, `Year`) VALUES
-('Wichita', 140101, 2014),
-('Wichita', 140102, 2014),
-('Wichita', 140103, 2014),
-('Wichita', 140104, 2014),
-('Wichita', 140105, 2014),
-('Wichita', 130101, 2013),
-('Wichita', 130102, 2013),
-('Wichita', 130103, 2013),
-('Wichita', 130104, 2013),
-('Wichita', 130105, 2013),
-('Salina', 140201, 2014),
-('Salina', 140202, 2014),
-('Salina', 140203, 2014),
-('Salina', 140204, 2014),
-('Salina', 140205, 2014);
+INSERT INTO `host` (`Region_name`, `Event_ID`) VALUES
+('Wichita', 140101),
+('Wichita', 140102),
+('Wichita', 140103),
+('Wichita', 140104),
+('Wichita', 140105),
+('Wichita', 130101),
+('Wichita', 130102),
+('Wichita', 130103),
+('Wichita', 130104),
+('Wichita', 130105),
+('Salina', 140201),
+('Salina', 140202),
+('Salina', 140203),
+('Salina', 140204),
+('Salina', 140205);
 
 -- --------------------------------------------------------
 
