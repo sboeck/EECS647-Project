@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2014 at 11:49 PM
+-- Generation Time: Nov 06, 2014 at 01:27 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -339,6 +339,7 @@ INSERT INTO `event` (`Event_ID`, `Location`, `Date`) VALUES
 CREATE TABLE IF NOT EXISTS `host` (
   `Region_name` text NOT NULL,
   `Event_ID` int(8) NOT NULL,
+  `Year` year(4) NOT NULL,
   PRIMARY KEY (`Event_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -346,22 +347,22 @@ CREATE TABLE IF NOT EXISTS `host` (
 -- Dumping data for table `host`
 --
 
-INSERT INTO `host` (`Region_name`, `Event_ID`) VALUES
-('Wichita', 140101),
-('Wichita', 140102),
-('Wichita', 140103),
-('Wichita', 140104),
-('Wichita', 140105),
-('Wichita', 130101),
-('Wichita', 130102),
-('Wichita', 130103),
-('Wichita', 130104),
-('Wichita', 130105),
-('Salina', 140201),
-('Salina', 140202),
-('Salina', 140203),
-('Salina', 140204),
-('Salina', 140205);
+INSERT INTO `host` (`Region_name`, `Event_ID`, `Year`) VALUES
+('Wichita', 140101, 2014),
+('Wichita', 140102, 2014),
+('Wichita', 140103, 2014),
+('Wichita', 140104, 2014),
+('Wichita', 140105, 2014),
+('Wichita', 130101, 2013),
+('Wichita', 130102, 2013),
+('Wichita', 130103, 2013),
+('Wichita', 130104, 2013),
+('Wichita', 130105, 2013),
+('Salina', 140201, 2014),
+('Salina', 140202, 2014),
+('Salina', 140203, 2014),
+('Salina', 140204, 2014),
+('Salina', 140205, 2014);
 
 -- --------------------------------------------------------
 
@@ -382,6 +383,27 @@ CREATE TABLE IF NOT EXISTS `region` (
 INSERT INTO `region` (`Region_name`, `Director`, `Safety_steward`) VALUES
 ('Wichita', 'Steve Roberts', 'Jeff Henry'),
 ('Salina', 'Dave Roberts', 'Fred Nickles');
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `sum_points`
+--
+CREATE TABLE IF NOT EXISTS `sum_points` (
+`Name` text
+,`Total_points` decimal(25,0)
+,`Class_name` tinytext
+,`Region_Name` text
+,`Year` year(4)
+);
+-- --------------------------------------------------------
+
+--
+-- Structure for view `sum_points`
+--
+DROP TABLE IF EXISTS `sum_points`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `sum_points` AS select `drivers`.`Name` AS `Name`,sum(`class`.`Points`) AS `Total_points`,`class`.`Class_Name` AS `Class_name`,`host`.`Region_name` AS `Region_Name`,`host`.`Year` AS `Year` from (((`class` join `host`) join `event`) join `drivers`) where ((`class`.`Event_ID` = `host`.`Event_ID`) and (`host`.`Event_ID` = `event`.`Event_ID`) and (`class`.`Member_ID` = `drivers`.`Member_ID`)) group by `drivers`.`Member_ID`,`host`.`Region_name`,`host`.`Year`;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
