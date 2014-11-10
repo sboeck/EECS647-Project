@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<select id="queryTypes" onChange="displayFields()">
+<option value="0">Events</option>
+<option value="1">Drivers</option>
+<option value="2">Driver's events</option>
+<option value="3">Winners</option>
+</select>
+
+
+<br>
+<textarea id="text1" rows = 1 required>
+Enter Region</textarea>
+
+
+<textarea id="text2" rows = 1 required>
+Enter Year</textarea>
+
+<textarea id="text3" rows = 1 required>
+</textarea>
+
+<br>
+<input type="button" name="test" value="Go!"
+onClick="genQuery()">
+
+<script>
+<!--
+
+function genQuery(){
+     var t1 = document.getElementById("text1").value;
+     var t2 = document.getElementById("text2").value;
+     var t3 = document.getElementById("text3").value;
+     alert("Your query has "+t1+" "+t2+" "+t3);
+
+}
+
+function displayFields(){
+  var opt = document.getElementById("queryTypes").selectedIndex;
+  var t1 = document.getElementById("text1");
+  var t2 = document.getElementById("text2");
+  var t3 = document.getElementById("text3");
+  switch(opt){
+     case 0:
+        t1.value = "Enter Region";
+        t2.value = "Enter Year";
+        t3.value = "";
+        t2.style.visibility = "visible";
+        t3.style.visibility = "hidden";
+        break;
+     case 1:
+        t1.value = "Enter EventID";
+        t2.value = "";
+        t3.value = "";
+        t2.style.visibility = "hidden";
+        t3.style.visibility = "hidden";
+        break;
+     case 2:
+        t1.value = "Enter MemberID";
+        t2.value = "";
+        t3.value = "";
+        t2.style.visibility = "hidden";
+        t3.style.visibility = "hidden";
+        break;
+     case 3:
+        t1.value = "Enter Region";
+        t2.value = "Enter Year";
+        t3.value = "Enter ClassName";
+        t2.style.visibility = "visible";
+        t3.style.visibility = "visible";
+        break;
+  }
+}
+displayFields();
+
+
+
+
+//-->
+</script>
+
+</body>
+</html>
