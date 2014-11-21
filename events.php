@@ -19,7 +19,8 @@ $my_query = "SELECT EVENT.Event_ID, EVENT.Location, EVENT.Date
 			 FROM EVENT, HOST
 			 WHERE EVENT.Event_ID = HOST.Event_ID
 			 AND Region_name = '" . $_GET["region"] . "'
-			 AND Year = '" . $_GET["year"] . "'";
+			 AND Year = '" . $_GET["year"] . "'
+			 ORDER BY EVENT.Event_ID";
 			
 $query_result = $conn->query($my_query);
 

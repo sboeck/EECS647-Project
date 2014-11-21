@@ -20,7 +20,8 @@ $conn = mysqli_connect('localhost', 'phpdev', 'password', 'autocross')
 $my_query = "SELECT Name, Time, Points, Class_name, Car_Model, Car_Num
 			 FROM CLASS, DRIVERS
 			 WHERE CLASS.Member_ID = DRIVERS.Member_ID
-			 AND Event_ID = '" . $_GET["Event_ID"] . "'";
+			 AND Event_ID = '" . $_GET["Event_ID"] . "'
+			 ORDER BY Class_name, Time";
 			
 $query_result = $conn->query($my_query);
 
