@@ -6,6 +6,8 @@
 
 <?php
  
+ 
+ 
 //
 // Connect to the database and use the autocross database
 //
@@ -17,8 +19,8 @@ $conn = mysqli_connect('localhost', 'phpdev', 'password', 'autocross')
 //
 $my_query = "SELECT Name, Time, Points, Class_name, Car_Model, Car_Num
 			 FROM CLASS, DRIVERS
-			 HERE CLASS.Member_ID = DRIVERS.Member_ID
-			 AND Event_ID = '" . $_POST["Event_ID"] . "'";
+			 WHERE CLASS.Member_ID = DRIVERS.Member_ID
+			 AND Event_ID = '" . $_GET["Event_ID"] . "'";
 			
 $query_result = $conn->query($my_query);
 
@@ -26,9 +28,12 @@ $query_result = $conn->query($my_query);
 // Display the results of the query
 //
 while($row = $query_result->fetch_assoc()){
-	echo "EventID: " . $row["Event_ID"] . 
-		 " Location: " . $row["Location"] . 
-		 " Date: " . $row["Date"] . 
+	echo "Name: " . $row["Name"] . 
+		 " Time: " . $row["Time"] . 
+		 " Points: " . $row["Points"] . 
+		 " Class_name: " . $row["Class_name"] . 
+		 " Car_Model: " . $row["Car_Model"] . 
+		 " Car_Num: " . $row["Car_Num"] . 
 		 "<br>";
 }
  

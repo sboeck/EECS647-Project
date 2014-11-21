@@ -18,8 +18,8 @@ $conn = mysqli_connect('localhost', 'phpdev', 'password', 'autocross')
 $my_query = "SELECT EVENT.Event_ID, EVENT.Location, EVENT.Date
 			 FROM EVENT, HOST
 			 WHERE EVENT.Event_ID = HOST.Event_ID
-			 AND Region_name = '" . $_POST["region"] . "'
-			 AND Year = '" . $_POST["year"] . "'";
+			 AND Region_name = '" . $_GET["region"] . "'
+			 AND Year = '" . $_GET["year"] . "'";
 			
 $query_result = $conn->query($my_query);
 
@@ -27,8 +27,8 @@ $query_result = $conn->query($my_query);
 // Display the results of the query
 //
 while($row = $query_result->fetch_assoc()){
-	echo "EventID: " . $row["Event_ID"] . 
-		 " Location: " . $row["Location"] . 
+	echo "EventID: <a href=\"drivers.php?Event_ID=" . $row["Event_ID"] . "\">" . $row["Event_ID"] . "</a> 
+		  Location: " . $row["Location"] . 
 		 " Date: " . $row["Date"] . 
 		 "<br>";
 }
