@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Database Lookup</title>
+</head>
+
+<body>
+
+<b>Find Events</b>
+<form method="post" action="events.php">
+Region:<select name="region">
+		<option value="Kansas City">Kansas City
+		<option value="NE Oklahoma">NE Oklahoma
+		<option value="Salina">Salina
+		<option value="Wichita">Wichita</select>
+Year:<select name="year">
+		<option value="2014">2014
+		<option value="2013">2013
+		<option value="2012">2012</select>
+<input type="submit">
+</form><br>
+
+<b>Find Drivers</b>
+<form method="post" action="drivers.php">
+Event ID:<input type="text" name="Event_ID">
+<input type="submit">
+</form>
+
+
+
+</body>
+</html>
