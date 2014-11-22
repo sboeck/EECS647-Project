@@ -251,6 +251,28 @@ INSERT INTO `class` (`Member_ID`, `Event_ID`, `Time`, `Points`, `Class_Name`, `C
 -- --------------------------------------------------------
 
 --
+--Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS 'users' (
+  `Username` text NOT NULL,
+  `Password` text NOT NULL,
+  PRIMARY KEY (`Username`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`Username`, `Password`) VALUES
+(`Alice`, `password1`),
+(`Bob`, `123456`),
+(`Carol`, `qwerty`),
+(`David`, `notPassword`);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `drivers`
 --
 
