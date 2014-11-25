@@ -254,7 +254,7 @@ INSERT INTO `class` (`Member_ID`, `Event_ID`, `Time`, `Points`, `Class_Name`, `C
 --Table structure for table `users`
 --
 
-CREATE TABLE IF NOT EXISTS 'users' (
+CREATE TABLE IF NOT EXISTS `users` (
   `Username` text NOT NULL,
   `Password` text NOT NULL,
   PRIMARY KEY (`Username`)
