@@ -19,19 +19,19 @@ $password=$_POST['password'];
 // To protect MySQL injection (more detail about MySQL injection)
 $username = stripslashes($username);
 $password = stripslashes($password);
-$username = mysql_real_escape_string($username);
-$password = mysql_real_escape_string($password);
+$username = mysqli_real_escape_string($conn, $username);
+$password = mysqli_real_escape_string($conn, $password);
 
 $my_query = "SELECT *
 		FROM users
-		WHERE username = '$username'
-		AND password = '$password'";
+		WHERE username = '" . $username . "'
+		AND password = '" . $password . "'";
 
 
 $query_result = $conn->query($my_query);
 
 // Mysql_num_row is counting table row
-$count=mysql_num_rows($query_result);
+$count = mysqli_num_rows($query_result);
 
 // If result matched $username and $password, table row must be 1 row
 if($count==1){
