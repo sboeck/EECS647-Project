@@ -27,13 +27,29 @@ $query_result = $conn->query($my_query);
 //
 // Display the results of the query
 //
-while($row = $query_result->fetch_assoc()){
-	echo "EventID: <a href=\"drivers.php?Event_ID=" . $row["Event_ID"] . "\">" . $row["Event_ID"] . "</a> 
-		  Location: " . $row["Location"] . 
-		 " Date: " . $row["Date"] . 
-		 "<br>";
+echo "<style>
+table, td {
+    border: 1px solid black;
+    border-collapse: collapse;
 }
- 
+th  {
+    border: 1px solid black;
+    border-collapse: collapse;
+	background-color:#eee;
+}
+
+</style>";
+
+echo "<table><tr><th>EventID</th><th>Location</th><th>Date</th>";
+while($row = $query_result->fetch_assoc()){
+	echo "<tr>
+			<td><a href=\"drivers.php?Event_ID=" . $row["Event_ID"] . "\">" . $row["Event_ID"] . "</a> </td>
+			<td>" . $row["Location"] . "</td>
+			<td>" . $row["Date"] . "</td>
+		</tr>";
+}
+
+echo "</table>"
 ?> 
 
 </body>
