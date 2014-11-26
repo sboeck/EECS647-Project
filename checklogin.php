@@ -37,8 +37,8 @@ $count = mysqli_num_rows($query_result);
 if($count==1){
 
 // Register $username, $password and redirect to file "update.php"
-session_register("username");
-session_register("password"); 
+$_SESSION["username"] = $username;
+$_SESSION["password"] = $password;
 header("location:update.php");
 }
 else {
