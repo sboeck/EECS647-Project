@@ -42,7 +42,7 @@ $_SESSION["password"] = $password;
 header("location:update.php");
 }
 else {
-echo "Wrong Username or Password";
+echo "<p style=\"color:red\">Wrong Username or Password</p>";
 }
 ?>
 

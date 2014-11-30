@@ -16,24 +16,22 @@ $conn = mysqli_connect('localhost', 'phpdev', 'password', 'autocross')
 // Save form input into variables
 //
 $region = $_GET["region"];
-$year = $_GET["year"];
 
 //
 // Make a database query and save the result in $query_result
 //
-$my_query = "SELECT EVENT.Event_ID, EVENT.Location, EVENT.Date
-			 FROM EVENT, HOST
-			 WHERE EVENT.Event_ID = HOST.Event_ID
-			 AND Region_name = '" . $region . "'
-			 AND Year = '" . $year . "'
-			 ORDER BY EVENT.Event_ID";
+$my_query = "SELECT Name, Total_points, Class_name 
+			FROM sum_points 
+			WHERE Year = DATE_FORMAT(CURDATE(), '%Y')
+			AND Region_name = '" . $region . "'
+			ORDER BY Class_name, Total_points DESC";
 			
 $query_result = $conn->query($my_query);
 
 // If the query returned any results
 if($row = $query_result->fetch_assoc()){
 
-	echo "Events hosted by " . $region . " during " . $year . ":";
+	echo $region . " current standings:";
 
 	//
 	// Display the results of the query
@@ -51,23 +49,22 @@ if($row = $query_result->fetch_assoc()){
 
 	</style>";
 
-	echo "<table><tr><th>EventID</th><th>Location</th><th>Date</th>";
+	echo "<table><tr><th>Name</th><th>Total Points</th><th>Class</th>";
 	do {
 		echo "<tr>
-				<td><a href=\"drivers.php?Event_ID=" . $row["Event_ID"] . "\">" . $row["Event_ID"] . "</a> </td>
-				<td>" . $row["Location"] . "</td>
-				<td>" . $row["Date"] . "</td>
+				<td>" . $row["Name"] . "</td>
+				<td>" . $row["Total_points"] . "</td>
+				<td>" . $row["Class_name"] . "</td>
 			</tr>";
 	} while($row = $query_result->fetch_assoc());
 
 	echo "</table>";
-
+	
 } else {
-
 	//
 	// ADD A REDIRECT HERE
 	//
-	echo "<p style=\"color:red\">No events hosted by " . $region . " in " . $year . ".</p>";
+	echo "<p style=\"color:red\">No current standings found for " . $region . ".</p>";
 }
 ?> 
 
