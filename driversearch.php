@@ -69,10 +69,8 @@ if($row = $query_result->fetch_assoc()){
 	echo "</table>";
 
 } else {
-	//
-	// ADD A REDIRECT HERE
-	//
-	echo "<p style=\"color:red\">No drivers named " . $name . " found in the " . $region . " Region.</p>";
+	// Redirect and set error flag to display no results
+	header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . "/database_lookup.php?error=1") ;
 }
 ?> 
 
