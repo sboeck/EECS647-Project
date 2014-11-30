@@ -1,9 +1,3 @@
-<html>
-<head>
-<title>Query results</title>
-</head>
-<body>
-
 <?php
  
 //
@@ -33,7 +27,14 @@ $query_result = $conn->query($my_query);
 // If the query returned any results
 if($row = $query_result->fetch_assoc()){
 
-	echo "Events hosted by " . $region . " during " . $year . ":";
+// The html tag MUST begin here, not before the php script
+// in order for redirect to work correctly
+	echo "<html>
+		<head>
+		<title>Query results</title>
+		</head>
+		<body>
+		Events hosted by " . $region . " during " . $year . ":";
 
 	//
 	// Display the results of the query
@@ -60,16 +61,12 @@ if($row = $query_result->fetch_assoc()){
 			</tr>";
 	} while($row = $query_result->fetch_assoc());
 
-	echo "</table>";
+	echo "</table>
+		</body>
+		</html>";
 
 } else {
-
-	//
-	// ADD A REDIRECT HERE
-	//
-	echo "<p style=\"color:red\">No events hosted by " . $region . " in " . $year . ".</p>";
+	// Redirect and set error flag to display no results
+	header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . "/database_lookup.php?error=1") ;
 }
 ?> 
-
-</body>
-</html>
