@@ -1,16 +1,24 @@
 <html>
 
 <head>
-<title>Database Lookup</title>
+<title>Find Results</title>
 </head>
 
 <body>
 
 <form method="post" action="checklogin.php">
 Username <input type="text" name="username">
-Password <input type="text" name="password">
+Password <input type="password" name="password">
 <input type="submit">
 </form>
+
+<p>
+<a href="home.html">Home</a>
+<a href="database_lookup.php">Find Results</a>
+<a href="hall_of_fame.php">Hall of Fame</a>
+<a href="about.html">About</a>
+<a href="database_update.php">Database Update</a>
+</p>
 
 <?php
 // Check if a query returned no results

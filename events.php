@@ -1,3 +1,17 @@
+<html>
+<head>
+<title>Query results</title>
+</head>
+<body>
+
+<p>
+<a href="home.html">Home</a>
+<a href="database_lookup.php">Find Results</a>
+<a href="hall_of_fame.php">Hall of Fame</a>
+<a href="about.html">About</a>
+<a href="database_update.php">Database Update</a>
+</p>
+	
 <?php
  
 //
@@ -27,14 +41,7 @@ $query_result = $conn->query($my_query);
 // If the query returned any results
 if($row = $query_result->fetch_assoc()){
 
-// The html tag MUST begin here, not before the php script
-// in order for redirect to work correctly
-	echo "<html>
-		<head>
-		<title>Query results</title>
-		</head>
-		<body>
-		Events hosted by " . $region . " during " . $year . ":";
+	echo "Events hosted by " . $region . " during " . $year . ":";
 
 	//
 	// Display the results of the query
@@ -61,12 +68,13 @@ if($row = $query_result->fetch_assoc()){
 			</tr>";
 	} while($row = $query_result->fetch_assoc());
 
-	echo "</table>
-		</body>
-		</html>";
-
 } else {
 	// Redirect and set error flag to display no results
-	header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . "/database_lookup.php?error=1") ;
+	header("Location: http://" . $_SERVER['HTTP_HOST'] . "/database_lookup.php?error=1");
+	exit;
 }
 ?> 
+
+</table>
+</body>
+</html>

@@ -4,6 +4,14 @@
 </head>
 <body>
 
+<p>
+<a href="home.html">Home</a>
+<a href="database_lookup.php">Find Results</a>
+<a href="hall_of_fame.php">Hall of Fame</a>
+<a href="about.html">About</a>
+<a href="database_update.php">Database Update</a>
+</p>
+
 <?php
 
 //
@@ -70,7 +78,8 @@ if($row = $query_result->fetch_assoc()){
 
 } else {
 	// Redirect and set error flag to display no results
-	header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . "/database_lookup.php?error=1") ;
+	header("Location: http://" . $_SERVER['HTTP_HOST'] . "/database_lookup.php?error=1");
+	exit;
 }
 ?> 
 
