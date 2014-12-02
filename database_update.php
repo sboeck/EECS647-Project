@@ -1,7 +1,9 @@
 <?php
+// If not logged in, redirect to home page with error
 session_start();
-if(isset($_SESSION["username"]) && isset($_SESSION["password"])){
-header("location:home.html");
+if(!(isset($_SESSION['username']) && isset($_SESSION['password']))){
+header("location:home.php?error=2");
+exit;
 }
 ?>
 

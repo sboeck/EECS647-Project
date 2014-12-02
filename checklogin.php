@@ -35,13 +35,16 @@ $count = mysqli_num_rows($query_result);
 // If result matched $username and $password, table row must be 1 row
 if($count==1){
 
-// Register $username, $password and redirect to file "update.php"
-$_SESSION["username"] = $username;
-$_SESSION["password"] = $password;
+// Register $username, $password and redirect to file "database_update.php"
+$_SESSION['username'] = $username;
+$_SESSION['password'] = $password;
 header("location:database_update.php");
+exit;
 }
 else {
-echo "<p style=\"color:red\">Wrong Username or Password</p>";
+// Redirect with login failed error
+echo header("location:home.php?error=1");
+exit;
 }
 ?>
 
