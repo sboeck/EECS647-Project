@@ -1,16 +1,15 @@
+<?php
+session_start();
+if(isset($_SESSION["username"]) && isset($_SESSION["password"])){
+header("location:home.html");
+}
+?>
+
 <html>
-
 <head>
-<title>Database Update</title>
+<title>Update</title>
 </head>
-
 <body>
-
-<form method="post" action="checklogin.php">
-Username <input type="text" name="username">
-Password <input type="password" name="password">
-<input type="submit">
-</form>
 
 <p>
 <a href="home.html">Home</a>
@@ -19,6 +18,8 @@ Password <input type="password" name="password">
 <a href="about.html">About</a>
 <a href="database_update.php">Database Update</a>
 </p>
+
+<p>Login Successful. Please complete forms to add new records to the database.</p>
 
 <?php
 // Check if a query failed

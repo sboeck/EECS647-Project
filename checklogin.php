@@ -6,7 +6,6 @@
 
 <?php
 
-
 // Connect to server and select databse.
 
 $conn = mysqli_connect('localhost', 'phpdev', 'password', 'autocross')
@@ -39,13 +38,12 @@ if($count==1){
 // Register $username, $password and redirect to file "update.php"
 $_SESSION["username"] = $username;
 $_SESSION["password"] = $password;
-header("location:update.php");
+header("location:database_update.php");
 }
 else {
 echo "<p style=\"color:red\">Wrong Username or Password</p>";
 }
 ?>
-
 
 </body>
 </html>
