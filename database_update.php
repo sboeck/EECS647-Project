@@ -1,9 +1,21 @@
 <?php
 // If not logged in, redirect to home page with error
+$conn = mysqli_connect('localhost', 'phpdev', 'password', 'autocross')
+	or die('Could not connect: ' . mysql_error());
 session_start();
-if(!(isset($_SESSION['username']) && isset($_SESSION['password']))){
+$user_check=$_SESSION['username'];
+$pass_check=$_SESSION['password'];
+$my_query = "SELECT *
+		FROM users
+		WHERE username = '" . $user_check . "'
+		AND password = '" . $pass_check . "'";
+$query_result = $conn->query($my_query);
+$count = mysqli_num_rows($query_result);
+
+if(!($count==1)){
+mysql_close($conn);
 header("location:home.php?error=2");
-exit;
+//exit;
 }
 ?>
 
@@ -12,6 +24,10 @@ exit;
 <title>Update</title>
 </head>
 <body>
+
+<form method="post" action="logout.php">
+<input type="submit">
+</form><br>
 
 <p>
 <a href="home.html">Home</a>

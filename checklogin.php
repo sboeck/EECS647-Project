@@ -5,7 +5,7 @@
 <body>
 
 <?php
-
+session_start();
 // Connect to server and select databse.
 
 $conn = mysqli_connect('localhost', 'phpdev', 'password', 'autocross')
@@ -39,12 +39,12 @@ if($count==1){
 $_SESSION['username'] = $username;
 $_SESSION['password'] = $password;
 header("location:database_update.php");
-exit;
+//exit;
 }
 else {
 // Redirect with login failed error
 echo header("location:home.php?error=1");
-exit;
+//exit;
 }
 ?>
 
