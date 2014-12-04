@@ -2,6 +2,6 @@
 session_start();
 if(session_destroy())
 {
-header("location: home.php);
+header("location: home.php");
 }
 ?>

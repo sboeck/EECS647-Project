@@ -2,13 +2,31 @@
 <head>
 <title>Query results</title>
 </head>
-<body>
+<body bgcolor="#E0E0E0">
+
+<?php
+session_start();
+if(isset($_SESSION['username'])) {
+echo "<form method=\"post\" action=\"logout.php\">
+	Welcome, " . $_SESSION['username'] . ". You are logged in.
+	<input type=\"submit\" value = \"Logout\">
+	</form>";
+}
+else
+{
+echo "<form method=\"post\" action=\"checklogin.php\">
+	Username <input type=\"text\" name=\"username\">
+	Password <input type=\"password\" name=\"password\">
+	<input type=\"submit\">
+	</form>";
+}
+?>
 
 <p>
-<a href="home.html">Home</a>
+<a href="home.php">Home</a>
 <a href="database_lookup.php">Find Results</a>
 <a href="hall_of_fame.php">Hall of Fame</a>
-<a href="about.html">About</a>
+<a href="about.php">About</a>
 <a href="database_update.php">Database Update</a>
 </p>
 
@@ -54,7 +72,9 @@ if($row = $query_result->fetch_assoc()){
 		border-collapse: collapse;
 		background-color:#C0C0C0;
 	}
-
+	tr  {
+		background-color:#FFFFFF;
+	}
 	</style>";
 
 	echo "<table><tr><th>Name</th><th>Total Points</th><th>Class</th>";

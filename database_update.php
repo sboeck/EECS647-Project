@@ -1,21 +1,14 @@
 <?php
-// If not logged in, redirect to home page with error
-$conn = mysqli_connect('localhost', 'phpdev', 'password', 'autocross')
-	or die('Could not connect: ' . mysql_error());
 session_start();
-$user_check=$_SESSION['username'];
-$pass_check=$_SESSION['password'];
-$my_query = "SELECT *
-		FROM users
-		WHERE username = '" . $user_check . "'
-		AND password = '" . $pass_check . "'";
-$query_result = $conn->query($my_query);
-$count = mysqli_num_rows($query_result);
-
-if(!($count==1)){
-mysql_close($conn);
+if(isset($_SESSION['username'])) {
+echo "<form method=\"post\" action=\"logout.php\">
+	Welcome, " . $_SESSION['username'] . ". You are logged in.
+	<input type=\"submit\" value = \"Logout\">
+	</form>";
+}
+else
+{
 header("location:home.php?error=2");
-//exit;
 }
 ?>
 
@@ -23,17 +16,13 @@ header("location:home.php?error=2");
 <head>
 <title>Update</title>
 </head>
-<body>
-
-<form method="post" action="logout.php">
-<input type="submit">
-</form><br>
+<body bgcolor="#D0D0D0">
 
 <p>
-<a href="home.html">Home</a>
+<a href="home.php">Home</a>
 <a href="database_lookup.php">Find Results</a>
 <a href="hall_of_fame.php">Hall of Fame</a>
-<a href="about.html">About</a>
+<a href="about.php">About</a>
 <a href="database_update.php">Database Update</a>
 </p>
 
@@ -50,17 +39,40 @@ echo "<p style=\"color:blue\">Update successful.</p>";
 }
 ?>
 
-<b>Add Event</b>
+<!-- CSS formatting -->
+<style>
+fieldset {
+	width: 500px;
+}
+legend {
+	font-size: 20px;
+}
+label.field {
+	text-align: right;
+	width: 100px
+}
+input.textbox-300 {
+	width: 300px;
+}
+fieldset p{
+	clear: both;
+	padding: 5px;
+}
+</style>
+
 <form method="post" action="add_event.php">
-Region:<select name="region">
-		<option value="Kansas City">Kansas City
-		<option value="NE Oklahoma">NE Oklahoma
-		<option value="Salina">Salina
-		<option value="Wichita">Wichita</select>
-Event ID:<input type="number" name="eventid">
-Location:<input type="text" name="location">
-Date:<input type="date" name="date">
-<input type="submit">
+	<fieldset>
+		<legend>Add Event</legend>
+		<p><label class="field" for="Region">Region:</label><select name="region">
+			<option value="Kansas City">Kansas City
+			<option value="NE Oklahoma">NE Oklahoma
+			<option value="Salina">Salina
+			<option value="Wichita">Wichita</select></p>
+		<p><label class="field" for="Event ID">Event ID:</label><input type="number" name="eventid" class="textbox-300"></p>
+		<p><label class="field" for="Location">Location:</label><input type="text" name="location" class="textbox-300"></p>
+		<p><label class="field" for="Date">Date:</label><input type="date" name="date" class="textbox-300"></p>
+		<input type="submit">
+	</fieldset>
 </form><br>
 
 <b>Add Driver Result</b>

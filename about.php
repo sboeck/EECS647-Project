@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Autocross Data System Home</title>
+<title>About ADS</title>
 </head>
 <body bgcolor="#E0E0E0">
 
@@ -22,17 +22,6 @@ echo "<form method=\"post\" action=\"checklogin.php\">
 }
 ?>
 
-<?php
-// Check for login failure
-if(!empty($_GET["error"])){
-	if($_GET["error"] == 1){
-		echo "<p style=\"color:red\">Login failed, try again.</p>";
-	}else{
-		echo "<p style=\"color:red\">You are not logged in.</p>";
-	}
-}
-?>
-
 <p>
 <a href="home.php">Home</a>
 <a href="database_lookup.php">Find Results</a>
@@ -41,9 +30,9 @@ if(!empty($_GET["error"])){
 <a href="database_update.php">Database Update</a>
 </p>
 
-<h2>Welcome to the Autocross Data System</h2>
-<p>Visit the find results page to find the outcomes of races, 
-see the hall of fame, or learn more on the about page. Please login to update the database.</p>
+<p>
+Chris is working on this...
+</p>
 
 </body>
 </html>
