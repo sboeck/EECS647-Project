@@ -78,13 +78,13 @@ fieldset p{
 <form method="post" action="add_result.php">
 	<fieldset>
 		<legend>Add Driver Result</legend>
-		<p><label class="field" for="Event ID">Event ID:</label><input type="number" name="eventid" class="textbox-150">
-		<label class="field" for="Member ID">Member ID:</label><input type="number" name="memberid" class="textbox-150"></p>
-		<p><label class="field" for="Points">Points:</label><input type="number" name="points" class="textbox-100">
-		<label class="field" for="Time">Time:</label><input type="text" name="time" class="textbox-100"></p>
+		<p><label class="field" for="Event ID">Event ID:</label><input type="number" name="eventid" class="textbox-150"></p>
+		<p><label class="field" for="Member ID">Member ID:</label><input type="number" name="memberid" class="textbox-150"></p>
+		<p><label class="field" for="Points">Points:</label><input type="number" name="points" class="textbox-100"></p>
+		<p><label class="field" for="Time">Time:</label><input type="text" name="time" class="textbox-100"></p>
 		<p><label class="field" for="Class">Class:</label><input type="text" name="class" class="textbox-100"></p>
-		<p><label class="field" for="Class">Car Number:</label><input type="number" name="carnum" class="textbox-150">
-		<label class="field" for="Class">Car Model:</label><input type="text" name="carmodel" class="textbox-150"></p>
+		<p><label class="field" for="Class">Car Number:</label><input type="number" name="carnum" class="textbox-150"></p>
+		<p><label class="field" for="Class">Car Model:</label><input type="text" name="carmodel" class="textbox-150"></p>
 		<input type="submit">
 	</fieldset>
 </form><br>
@@ -92,8 +92,8 @@ fieldset p{
 <form method="post" action="add_member.php">
 	<fieldset>
 		<legend>Add New Member</legend>
-		<p><label class="field" for="Member ID">Member ID:</label><input type="number" name="memberid" class="textbox-150">
-		<label class="field" for="Name">Name:</label><input type="text" name="name" class="textbox-150"></p>
+		<p><label class="field" for="Member ID">Member ID:</label><input type="number" name="memberid" class="textbox-150"></p>
+		<p><label class="field" for="Name">Name:</label><input type="text" name="name" class="textbox-150"></p>
 		<input type="submit">
 	</fieldset>
 </form><br>
