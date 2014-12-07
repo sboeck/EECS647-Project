@@ -37,46 +37,59 @@ echo "<p style=\"color:red\">No results found.</p>";
 }
 ?>
 
-<b>Find Events</b>
+
 <form method="get" action="events.php">
-Region:<select name="region">
-		<option value="Kansas City">Kansas City
-		<option value="NE Oklahoma">NE Oklahoma
-		<option value="Salina">Salina
-		<option value="Wichita">Wichita</select>
-Year:<select name="year">
-		<option value="2014">2014
-		<option value="2013">2013
-		<option value="2012">2012</select>
-<input type="submit">
+	<fieldset>
+		<legend>Find Events</legend>
+		<p><label class="field" for="Region">Region:</label><select name="region">
+			<option value="Kansas City">Kansas City
+			<option value="NE Oklahoma">NE Oklahoma
+			<option value="Salina">Salina
+			<option value="Wichita">Wichita</select>
+		<label class="field" for="year">Year:</label><select name="year">
+			<option value="2014">2014
+			<option value="2013">2013
+			<option value="2012">2012</select></p>
+		<input type="submit">
+	</fieldset>
 </form><br>
 
-<b>Find Event Results</b>
+
+
+
 <form method="get" action="drivers.php">
-Event ID:<input type="text" name="Event_ID">
-<input type="submit">
+	<fieldset>
+		<legend>Find Event Results</legend>
+		<p><label class="field" for="Event ID">Event ID:</label><input type="number" name="eventid" class="textbox-300"></p>
+		<input type="submit">
+	</fieldset>
 </form><br>
 
-<b>Find Driver Results by Name</b>
-<form method="get" action="driversearch.php">
-First + Last Name:<input type="text" name="name">
-Region:<select name="region">
-		<option value="Kansas City">Kansas City
-		<option value="NE Oklahoma">NE Oklahoma
-		<option value="Salina">Salina
-		<option value="Wichita">Wichita</select>
-<input type="submit">
+<form method="get" action="add_event.php">
+	<fieldset>
+		<legend>Find Driver Results by Name</legend>
+		<p><label class="field" for="Event ID">First + Last Name:</label><input type="text" name="name" class="textbox-300"></p>
+		<p><label class="field" for="Region">Region:</label><select name="region">
+			<option value="Kansas City">Kansas City
+			<option value="NE Oklahoma">NE Oklahoma
+			<option value="Salina">Salina
+			<option value="Wichita">Wichita</select></p>
+		<input type="submit">
+	</fieldset>
 </form><br>
 
-<b>See Current Standings</b>
 <form method="get" action="standings.php">
-Region:<select name="region">
-		<option value="Kansas City">Kansas City
-		<option value="NE Oklahoma">NE Oklahoma
-		<option value="Salina">Salina
-		<option value="Wichita">Wichita</select>
-<input type="submit">
+	<fieldset>
+		<legend>See Current Standings</legend>
+		<p><label class="field" for="Region">Region:</label><select name="region">
+			<option value="Kansas City">Kansas City
+			<option value="NE Oklahoma">NE Oklahoma
+			<option value="Salina">Salina
+			<option value="Wichita">Wichita</select></p>
+		<input type="submit">
+	</fieldset>
 </form><br>
+
 
 </body>
 </html>

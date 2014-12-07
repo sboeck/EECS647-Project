@@ -16,7 +16,7 @@ header("location:home.php?error=2");
 <head>
 <title>Update</title>
 </head>
-<body bgcolor="#D0D0D0">
+<body bgcolor="#E0E0E0">
 <img src="https://dl.dropboxusercontent.com/s/t88rkqc13nno1al/bannerv2.png">
 <p>
 <a href="home.php">Home</a>
@@ -75,26 +75,29 @@ fieldset p{
 	</fieldset>
 </form><br>
 
-<b>Add Driver Result</b>
 <form method="post" action="add_result.php">
-Event ID:<input type="number" name="eventid">
-Member ID:<input type="number" name="memberid">
-<br>
-Points:<input type="number" name="points">
-Time:<input type="text" name="time">
-Class:<input type="text" name="class">
-<br>
-Car Number:<input type="number" name="carnum">
-Car Model:<input type="text" name="carmodel">
-<input type="submit">
+	<fieldset>
+		<legend>Add Driver Result</legend>
+		<p><label class="field" for="Event ID">Event ID:</label><input type="number" name="eventid" class="textbox-150">
+		<label class="field" for="Member ID">Member ID:</label><input type="number" name="memberid" class="textbox-150"></p>
+		<p><label class="field" for="Points">Points:</label><input type="number" name="points" class="textbox-100">
+		<label class="field" for="Time">Time:</label><input type="text" name="time" class="textbox-100"></p>
+		<p><label class="field" for="Class">Class:</label><input type="text" name="class" class="textbox-100"></p>
+		<p><label class="field" for="Class">Car Number:</label><input type="number" name="carnum" class="textbox-150">
+		<label class="field" for="Class">Car Model:</label><input type="text" name="carmodel" class="textbox-150"></p>
+		<input type="submit">
+	</fieldset>
 </form><br>
 
-<b>Add New Member</b>
 <form method="post" action="add_member.php">
-Member ID:<input type="number" name="memberid">
-Name:<input type="text" name="name">
-<input type="submit">
+	<fieldset>
+		<legend>Add New Member</legend>
+		<p><label class="field" for="Member ID">Member ID:</label><input type="number" name="memberid" class="textbox-150">
+		<label class="field" for="Name">Name:</label><input type="text" name="name" class="textbox-150"></p>
+		<input type="submit">
+	</fieldset>
 </form><br>
+
 
 </body>
 </html>
