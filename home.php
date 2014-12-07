@@ -4,6 +4,7 @@
 </head>
 <body bgcolor="#E0E0E0">
 
+
 <?php
 session_start();
 if(isset($_SESSION['username'])) {
@@ -21,7 +22,7 @@ echo "<form method=\"post\" action=\"checklogin.php\">
 	</form>";
 }
 ?>
-
+<img src="https://dl.dropboxusercontent.com/s/t88rkqc13nno1al/bannerv2.png">
 <?php
 // Check for login failure
 if(!empty($_GET["error"])){

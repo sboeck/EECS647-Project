@@ -21,6 +21,7 @@ echo "<form method=\"post\" action=\"checklogin.php\">
 	</form>";
 }
 ?>
+<img src="https://dl.dropboxusercontent.com/s/t88rkqc13nno1al/bannerv2.png">
 
 <p>
 <a href="home.php">Home</a>
