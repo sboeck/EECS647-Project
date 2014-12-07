@@ -37,7 +37,6 @@ echo "<p style=\"color:red\">No results found.</p>";
 }
 ?>
 
-
 <form method="get" action="events.php">
 	<fieldset>
 		<legend>Find Events</legend>
@@ -54,18 +53,15 @@ echo "<p style=\"color:red\">No results found.</p>";
 	</fieldset>
 </form><br>
 
-
-
-
 <form method="get" action="drivers.php">
 	<fieldset>
 		<legend>Find Event Results</legend>
-		<p><label class="field" for="Event ID">Event ID:</label><input type="number" name="eventid" class="textbox-300"></p>
+		<p><label class="field" for="Event ID">Event ID:</label><input type="text" name="Event_ID" class="textbox-300"></p>
 		<input type="submit">
 	</fieldset>
 </form><br>
 
-<form method="get" action="add_event.php">
+<form method="get" action="driversearch.php">
 	<fieldset>
 		<legend>Find Driver Results by Name</legend>
 		<p><label class="field" for="Event ID">First + Last Name:</label><input type="text" name="name" class="textbox-300"></p>
