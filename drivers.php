@@ -17,11 +17,11 @@ else
 echo "<form method=\"post\" action=\"checklogin.php\">
 	Username <input type=\"text\" name=\"username\">
 	Password <input type=\"password\" name=\"password\">
-	<input type=\"submit\">
+	<input type=\"submit\" value=\"Login\">
 	</form>";
 }
 ?>
-
+<img src="https://dl.dropboxusercontent.com/s/t88rkqc13nno1al/bannerv2.png">
 <p>
 <a href="home.php">Home</a>
 <a href="database_lookup.php">Find Results</a>

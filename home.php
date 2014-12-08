@@ -18,7 +18,7 @@ else
 echo "<form method=\"post\" action=\"checklogin.php\">
 	Username <input type=\"text\" name=\"username\">
 	Password <input type=\"password\" name=\"password\">
-	<input type=\"submit\">
+	<input type=\"submit\" value=\"Login\">
 	</form>";
 }
 ?>
