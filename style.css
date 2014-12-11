@@ -1,0 +1,80 @@
+body {
+	background-image: url(background.jpg);
+	background-repeat:repeat;
+	background-attachment: fixed;
+	font-family: "Verdana";
+	font-size: 14px;
+}
+
+div{
+	margin-left: 5%;
+	margin-right: 5%;
+	padding: 10px 20px 20px 20px;
+	background-color: #E0E0E0;
+	border: 3px solid black;
+	overflow: hidden;
+}
+
+div.navigation{
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 20px;
+	margin-top: 10px;
+	padding: 0px 0px 10px 0px;
+	background-color: #E0E0E0;
+	border: 3px solid black;
+	overflow: hidden;
+}
+
+span{
+	margin-left: 10px;
+}
+
+span.error{
+	color: red;
+	font-weight: bold;
+}
+
+form.login{
+	display: inline;
+}
+
+input.login{
+	float: none;
+}
+
+table, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+th  {
+	border: 1px solid black;
+	border-collapse: collapse;
+	background-color:#C0C0C0;
+}
+tr  {
+	background-color:#FFFFFF;
+}
+
+fieldset {
+	width: 300px;
+}
+legend {
+	font-size: 20px;
+}
+label.field {
+	text-align: right;
+	width: 100px
+}
+input{
+	float: right;
+	width: 150px;
+}
+select{
+	float: right;
+	width: 150px;
+}
+fieldset p{
+	clear: both;
+	padding: 5px;
+}

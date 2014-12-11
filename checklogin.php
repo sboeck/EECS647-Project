@@ -1,9 +1,3 @@
-<html>
-<head>
-<title>Login Check</title>
-</head>
-<body>
-
 <?php
 session_start();
 // Connect to server and select databse.
@@ -26,7 +20,6 @@ $my_query = "SELECT *
 		WHERE username = '" . $username . "'
 		AND password = '" . $password . "'";
 
-
 $query_result = $conn->query($my_query);
 
 // Mysql_num_row is counting table row
@@ -47,6 +40,3 @@ echo header("location:home.php?error=1");
 //exit;
 }
 ?>
-
-</body>
-</html>

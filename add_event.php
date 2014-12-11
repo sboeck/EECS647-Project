@@ -1,5 +1,4 @@
 <?php
- 
 //
 // Connect to the database and use the autocross database
 //
@@ -33,7 +32,6 @@ if(mysqli_query($conn, $query1) and mysqli_query($conn, $query2)){
 	
 } else {
 	// Redirect and set error flag to display update error
-	header("Location: http://" . $_SERVER['HTTP_HOST'] . "/database_update.php?error=1");
+	header("Location: http://" . $_SERVER['HTTP_HOST'] . "/database_update.php?error=3");
 }
-
 ?> 

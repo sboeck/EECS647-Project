@@ -2,41 +2,45 @@
 <head>
 <title>Find Results</title>
 </head>
-<body bgcolor="#E0E0E0">
-
+<link rel="stylesheet" type="text/css" href="style.css" />
+<body>
 <?php
 session_start();
 if(isset($_SESSION['username'])) {
 echo "<form method=\"post\" action=\"logout.php\">
 	Welcome, " . $_SESSION['username'] . ". You are logged in.
-	<input type=\"submit\" value = \"Logout\">
+	<input type=\"submit\" value = \"Logout\" class=\"login\">
 	</form>";
 }
 else
 {
-echo "<form method=\"post\" action=\"checklogin.php\">
-	Username <input type=\"text\" name=\"username\">
-	Password <input type=\"password\" name=\"password\">
-	<input type=\"submit\" value=\"Login\">
+echo "<form method=\"post\" action=\"checklogin.php\" class=\"login\">
+	Username: <input type=\"text\" name=\"username\" class=\"login\">
+	Password: <input type=\"password\" name=\"password\" class=\"login\">
+	<input type=\"submit\" value=\"Login\" class=\"login\">
 	</form>";
 }
 ?>
-<img src="https://dl.dropboxusercontent.com/s/t88rkqc13nno1al/bannerv2.png">
-<p>
+
+<div class="navigation">
+<img src="banner.png"><br>
+<span>
 <a href="home.php">Home</a>
 <a href="database_lookup.php">Find Results</a>
 <a href="hall_of_fame.php">Hall of Fame</a>
 <a href="about.php">About</a>
 <a href="database_update.php">Database Update</a>
-</p>
+</span>
+</div>
 
+<div>
+<h2>Find Results</h2>
 <?php
 // Check if a query returned no results
 if(!empty($_GET["error"])){
-echo "<p style=\"color:red\">No results found.</p>";
+	echo "<p><span class=\"error\">No results found.</span></p>";
 }
 ?>
-
 <form method="get" action="events.php">
 	<fieldset>
 		<legend>Find Events</legend>
@@ -45,7 +49,7 @@ echo "<p style=\"color:red\">No results found.</p>";
 			<option value="NE Oklahoma">NE Oklahoma
 			<option value="Salina">Salina
 			<option value="Wichita">Wichita</select>
-		<label class="field" for="year">Year:</label><select name="year">
+		<p><label class="field" for="year">Year:</label><select name="year"></p>
 			<option value="2014">2014
 			<option value="2013">2013
 			<option value="2012">2012</select></p>
@@ -85,7 +89,6 @@ echo "<p style=\"color:red\">No results found.</p>";
 		<input type="submit">
 	</fieldset>
 </form><br>
-
-
+</div>
 </body>
 </html>
