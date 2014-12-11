@@ -66,8 +66,6 @@ if($row = $query_result->fetch_assoc()){
 	//
 	// Display the results of the query
 	//
-
-
 	echo "<table><tr><th>Name</th><th>Total Points</th><th>Class</th>";
 	do {
 		echo "<tr>

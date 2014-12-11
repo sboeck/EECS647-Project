@@ -67,21 +67,6 @@ if($row = $query_result->fetch_assoc()){
 	//
 	// Display the results of the query
 	//
-	echo "<style>
-	table, td {
-		border: 1px solid black;
-		border-collapse: collapse;
-	}
-	th  {
-		border: 1px solid black;
-		border-collapse: collapse;
-		background-color:#C0C0C0;
-	}
-	tr  {
-		background-color:#FFFFFF;
-	}
-	</style>";
-
 	echo "<table><tr><th>EventID</th><th>Location</th><th>Date</th><th>Time</th><th>Points</th><th>Class_name</th><th>Car_model</th><th>Car_num</th>";
 	do {
 		echo "<tr>
